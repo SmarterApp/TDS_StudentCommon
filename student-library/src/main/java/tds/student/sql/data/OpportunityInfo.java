@@ -26,6 +26,7 @@ public class OpportunityInfo
   private UUID                  examId;
   private OpportunityStatusType examStatus;
   private String examClientName;
+  private String browerUserAgent;
 
   @JsonProperty ("IsOpen")
   public boolean getIsOpen () {
@@ -43,7 +44,7 @@ public class OpportunityInfo
   }
 
   public OpportunityInstance createOpportunityInstance (UUID sessionKey) {
-    return new OpportunityInstance (_oppKey, sessionKey, _browserKey, examId, examBrowserKey, examClientName);
+    return new OpportunityInstance (_oppKey, sessionKey, _browserKey, examId, examBrowserKey, examClientName, browerUserAgent);
   }
 
   @JsonProperty ("Status")
@@ -89,6 +90,15 @@ public class OpportunityInfo
 
   public void setExamId(UUID examId) {
     this.examId = examId;
+  }
+
+  @JsonProperty ("BrowserUserAgent")
+  public String getBrowerUserAgent() {
+      return browerUserAgent;
+  }
+
+  public void setBrowerUserAgent(String browerUserAgent) {
+      this.browerUserAgent = browerUserAgent;
   }
 
   public void setExamStatus(OpportunityStatusType _status) {

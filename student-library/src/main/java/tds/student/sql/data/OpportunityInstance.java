@@ -14,6 +14,7 @@ package tds.student.sql.data;
  */
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;
 
@@ -25,6 +26,7 @@ public class OpportunityInstance
   private final UUID examId;
   private final UUID examBrowserKey;
   private final String examClientName;
+  private final String browserUserAgent;
 
   @JsonProperty ("Key")
   public UUID getKey () {
@@ -56,16 +58,22 @@ public class OpportunityInstance
     return examClientName;
   }
 
-  public OpportunityInstance (UUID oppKey, UUID sessionKey, UUID browserKey) {
-    this(oppKey, sessionKey, browserKey, UUID.randomUUID(), UUID.randomUUID(), "");
+  @JsonProperty("BrowserUserAgent")
+  public String getBrowserUserAgent() {
+    return browserUserAgent;
   }
 
-  public OpportunityInstance(UUID oppKey, UUID sessionKey, UUID browserKey, UUID examId, UUID examBrowserKey, String examClientName) {
+  public OpportunityInstance (UUID oppKey, UUID sessionKey, UUID browserKey) {
+    this(oppKey, sessionKey, browserKey, UUID.randomUUID(), UUID.randomUUID(), "", "");
+  }
+
+  public OpportunityInstance(UUID oppKey, UUID sessionKey, UUID browserKey, UUID examId, UUID examBrowserKey, String examClientName, String browserUserAgent) {
     _oppKey = oppKey;
     _sessionKey = sessionKey;
     _browserKey = browserKey;
     this.examClientName = examClientName;
     this.examId = examId != null ? examId : UUID.randomUUID();
     this.examBrowserKey = examBrowserKey != null ? examBrowserKey : UUID.randomUUID();
+    this.browserUserAgent = browserUserAgent != null ? browserUserAgent : StringUtils.EMPTY;
   }
 }
