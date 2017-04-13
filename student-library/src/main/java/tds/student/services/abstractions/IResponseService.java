@@ -32,4 +32,6 @@ public interface IResponseService
   boolean isTestComplete (UUID oppKey) throws ReturnStatusException;
 
   void removeResponse (OpportunityInstance oppInstance, int position, String itemID, String dateCreated) throws ReturnStatusException;
+
+  void markItemForReview(final OpportunityInstance opportunityInstance, final int position, final boolean mark) throws ReturnStatusException;
 }
