@@ -8,8 +8,12 @@
  ******************************************************************************/
 package tds.student.sql.data;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
+
+@JsonAutoDetect(fieldVisibility = NONE)
 public class ItemResponseUpdateStatus {
 	public int _position;
     public String _status;

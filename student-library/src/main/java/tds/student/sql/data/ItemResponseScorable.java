@@ -172,7 +172,12 @@ public class ItemResponseScorable implements IItemResponseScorable
   }
 
   @Override
+  @JsonProperty ("ClientName")
   public String getClientName() {
     return _clientName;
+  }
+
+  public void setClientName(String clientName) {
+    this._clientName = clientName;
   }
 }

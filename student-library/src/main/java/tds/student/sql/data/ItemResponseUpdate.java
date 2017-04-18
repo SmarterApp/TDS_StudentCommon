@@ -10,12 +10,18 @@ package tds.student.sql.data;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 /**
  * @author temp_rreddy
  * 
  */
+@JsonAutoDetect(fieldVisibility = NONE)
 public class ItemResponseUpdate extends ItemResponseScorable implements IItemResponseUpdate
 {
   private int     _page;
@@ -85,6 +91,7 @@ public class ItemResponseUpdate extends ItemResponseScorable implements IItemRes
     this._isSelected = _isSelected;
   }
 
+  @JsonProperty ("PageKey")
   public String getPageKey () {
     return _pageKey;
   }
