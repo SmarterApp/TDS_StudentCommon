@@ -11,7 +11,7 @@
     <artifactId>student-common-parent</artifactId>
     <name>student-common-parent</name>
     <packaging>pom</packaging>
-    <version>3.0.6-SNAPSHOT</version>
+    <version>3.0.6</version>
 
     <properties>
         <assertj.version>2.6.0</assertj.version>
@@ -107,7 +107,7 @@
         <connection>scm:git:https://github.com/SmarterApp/TDS_StudentCommon.git</connection>
         <developerConnection>scm:git:git://github.com/SmarterApp/TDS_StudentCommon.git</developerConnection>
         <url>https://github.com/SmarterApp/TDS_StudentCommon</url>
-        <tag>HEAD</tag>
+        <tag>3.0.6</tag>
     </scm>
 
     <distributionManagement>
