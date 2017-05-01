@@ -8,8 +8,6 @@
  ******************************************************************************/
 package tds.student.services.abstractions;
 
-import java.util.UUID;
-
 import TDS.Shared.Exceptions.ReturnStatusException;
 
 import tds.student.services.data.PageGroup;
@@ -27,7 +25,7 @@ public interface IResponseService {
 
   PageGroup getItemGroup(OpportunityInstance oppInstance, int page, String groupID, String dateCreated, boolean validate) throws ReturnStatusException;
 
-  boolean isTestComplete(UUID oppKey) throws ReturnStatusException;
+  boolean isTestComplete(OpportunityInstance opportunityInstance) throws ReturnStatusException;
 
   void removeResponse(OpportunityInstance oppInstance, int position, String itemID, String dateCreated) throws ReturnStatusException;
 
