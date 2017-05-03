@@ -42,6 +42,10 @@ public class PageGroup extends ItemResponses
     _numRequired = responseData.getGroupItemsRequired ();
   }
 
+  public int getNumRequired() {
+    return _numRequired;
+  }
+
   /**
    * @return the _number
    */
