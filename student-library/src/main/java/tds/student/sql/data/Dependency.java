@@ -37,6 +37,7 @@ public class Dependency
    * @param _contextType
    *          the _contextType to set
    */
+  @JsonProperty ("ContextType")
   public void setContextType (String _contextType) {
     this._contextType = _contextType;
   }
@@ -53,6 +54,7 @@ public class Dependency
    * @param _context
    *          the _context to set
    */
+  @JsonProperty ("Context")
   public void setContext (String _context) {
     this._context = _context;
   }
@@ -69,6 +71,7 @@ public class Dependency
    * @param _ifType
    *          the _ifType to set
    */
+  @JsonProperty ("IfType")
   public void setIfType (String _ifType) {
     this._ifType = _ifType;
   }
@@ -85,6 +88,7 @@ public class Dependency
    * @param _ifValue
    *          the _ifValue to set
    */
+  @JsonProperty ("IfValue")
   public void setIfValue (String _ifValue) {
     this._ifValue = _ifValue;
   }
@@ -101,6 +105,7 @@ public class Dependency
    * @param _thenType
    *          the _thenType to set
    */
+  @JsonProperty ("ThenType")
   public void setThenType (String _thenType) {
     this._thenType = _thenType;
   }
@@ -117,6 +122,7 @@ public class Dependency
    * @param _thenValue
    *          the _thenValue to set
    */
+  @JsonProperty ("ThenValue")
   public void setThenValue (String _thenValue) {
     this._thenValue = _thenValue;
   }
@@ -133,6 +139,7 @@ public class Dependency
    * @param _isDefault
    *          the _isDefault to set
    */
+  @JsonProperty ("IsDefault")
   public void setIsDefault (boolean _isDefault) {
     this._isDefault = _isDefault;
   }

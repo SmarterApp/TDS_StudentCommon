@@ -28,6 +28,7 @@ public class TestRequirements
     return _flashVersion;
   }
 
+  @JsonProperty ("flashVersion")
   public void setFlashVersion (double _flashVersion) {
     this._flashVersion = _flashVersion;
   }
@@ -37,6 +38,7 @@ public class TestRequirements
     return _hasAudio;
   }
 
+  @JsonProperty ("hasAudio")
   public void setHasAudio (boolean _hasAudio) {
     this._hasAudio = _hasAudio;
   }
@@ -46,6 +48,7 @@ public class TestRequirements
     return _hasRecorder;
   }
 
+  @JsonProperty ("hasRecorder")
   public void setHasRecorder (boolean _hasRecorder) {
     this._hasRecorder = _hasRecorder;
   }

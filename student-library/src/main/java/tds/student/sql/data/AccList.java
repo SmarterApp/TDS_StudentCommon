@@ -8,36 +8,27 @@
  ******************************************************************************/
 package tds.student.sql.data;
 
-import java.sql.SQLException;
+import TDS.Shared.Exceptions.ReadOnlyException;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.IteratorUtils;
+import org.apache.commons.collections.Predicate;
+import tds.itemrenderer.data.AccLookup;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import tds.itemrenderer.data.AccLookup;
-import AIR.Common.DB.results.DbResultRecord;
-import TDS.Shared.Data.ColumnResultSet;
-import TDS.Shared.Exceptions.ReadOnlyException;
-import TDS.Shared.Exceptions.ReturnStatusException;
-
-public class AccList extends ArrayList<Data>
+public class AccList
 {
   private static final long serialVersionUID = 1L;
-  public List<Dependency> _dependencies;
-  private static final Logger _logger = LoggerFactory.getLogger (AccList.class);
-  
-  public AccList () {
-    _dependencies = new ArrayList<Dependency> ();
-  }
+
+  private final List<Data> data = new ArrayList<>();
+  private List<Dependency> dependencies = new ArrayList<>();
 
   @SuppressWarnings ("unchecked")
   public Collection<Data> getSegment (final int position) {
     // TODO Ravi/Shiva figure out where to get to use version 4.0
-    return CollectionUtils.select (this, new Predicate ()
+    return CollectionUtils.select (data, new Predicate ()
     {
       public boolean evaluate (Object object) {
         Data data = (Data) object;
@@ -46,13 +37,13 @@ public class AccList extends ArrayList<Data>
     });
   }
 
-  public Accommodations createAccommodations (int position, String id, String label) throws ReadOnlyException {
+  public Accommodations createAccommodations (final int position, final String id, final String label) throws ReadOnlyException {
     //id = null;
     //label = null;
-    Accommodations accommodations = new Accommodations (position, id, label);
+    final Accommodations accommodations = new Accommodations (position, id, label);
 
     // get all the acc data for this position
-    for (Data accData : getSegment (position)) {
+    for (final Data accData : getSegment (position)) {
       accommodations.create (accData.getType (), accData.getCode (), accData.getValue (), accData.isVisible (), accData.isSelectable (), accData.isAllowChange (), accData.isStudentControl (),
           accData.getDependsOnToolType (), accData.isDisableOnGuestSession (), accData.isDefault (), accData.isAllowCombine (), false);
     }
@@ -60,7 +51,7 @@ public class AccList extends ArrayList<Data>
     // if this is position 0 then add dependencies (segments don't support
     // this)
     if (position == 0) {
-      for (Dependency accDepends : getDependencies ()) {
+      for (final Dependency accDepends : getDependencies ()) {
         accommodations.AddDependency (accDepends.getIfType (), accDepends.getIfValue (), accDepends.getThenType (), accDepends.getThenValue (), accDepends.isDefault ());
       }
     }
@@ -68,35 +59,38 @@ public class AccList extends ArrayList<Data>
     return accommodations;
   }
 
+  public List<Data> getData() {
+    return data;
+  }
+
+  public boolean add(final Data newData) {
+    return data.add(newData);
+  }
+
   /**
    * @return the _dependencies
    */
   public List<Dependency> getDependencies () {
-    return _dependencies;
+    return dependencies;
   }
 
   /**
-   * @param _dependencies
-   *          the _dependencies to set
+   * @param dependencies the _dependencies to set
    */
-  public void setDependencies (List<Dependency> _dependencies) {
-    this._dependencies = _dependencies;
+  public void setDependencies (final List<Dependency> dependencies) {
+    this.dependencies = dependencies;
   }
 
-  public AccLookup createLookup (int position) {
+  public AccLookup createLookup (final int position) {
     // TODO
-    AccLookup accLookup = new AccLookup ();
+    final AccLookup accLookup = new AccLookup ();
 
     // get all the acc data for this position
-    for (Data accData : getSegment (position)) {
-      String[] strArray = new String[] { accData.getValue () };
+    for (final Data accData : getSegment (position)) {
+      final String[] strArray = new String[] { accData.getValue () };
       accLookup.add (accData.getType (), strArray);
     }
 
     return accLookup;
   }
-
-  
-
-  
 }

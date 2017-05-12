@@ -43,6 +43,7 @@ public class TestSegment
     return _id;
   }
 
+  @JsonProperty ("ID")
   public void setId (String _id) {
     this._id = _id;
   }
@@ -52,6 +53,7 @@ public class TestSegment
     return _position;
   }
 
+  @JsonProperty ("Position")
   public void setPosition (int _position) {
     this._position = _position;
   }
@@ -61,6 +63,7 @@ public class TestSegment
     return _label;
   }
 
+  @JsonProperty ("Label")
   public void setLabel (String _label) {
     this._label = _label;
   }
@@ -70,6 +73,7 @@ public class TestSegment
     return _isPermeable;
   }
 
+  @JsonProperty ("IsPermeable")
   public void setIsPermeable (int _isPermeable) {
     this._isPermeable = _isPermeable;
   }
@@ -79,6 +83,7 @@ public class TestSegment
     return _entryApproval;
   }
 
+  @JsonProperty ("EntryApproval")
   public void setEntryApproval (int _entryApproval) {
     this._entryApproval = _entryApproval;
   }
@@ -88,6 +93,7 @@ public class TestSegment
     return _exitApproval;
   }
 
+  @JsonProperty ("ExitApproval")
   public void setExitApproval (int _exitApproval) {
     this._exitApproval = _exitApproval;
   }
@@ -97,6 +103,7 @@ public class TestSegment
     return _itemReview;
   }
 
+  @JsonProperty ("ItemReview")
   public void setItemReview (boolean _itemReview) {
     this._itemReview = _itemReview;
   }
@@ -106,6 +113,7 @@ public class TestSegment
     return _updatePermable;
   }
 
+  @JsonProperty ("updatePermeable")
   public void setUpdatePermable (int value) {
     this._updatePermable = value;
   }
