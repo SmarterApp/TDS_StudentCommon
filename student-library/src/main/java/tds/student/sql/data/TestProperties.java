@@ -46,6 +46,7 @@ public class TestProperties extends ITestRequirementsInput
     return _testKey;
   }
 
+  @JsonProperty ("key")
   public void setTestKey (String _testKey) {
     this._testKey = _testKey;
   }
@@ -55,6 +56,7 @@ public class TestProperties extends ITestRequirementsInput
     return _testID;
   }
 
+  @JsonProperty ("id")
   public void setTestID (String _testID) {
     this._testID = _testID;
   }
@@ -64,6 +66,7 @@ public class TestProperties extends ITestRequirementsInput
     return _grade;
   }
 
+  @JsonProperty ("gradeCode")
   public void setGrade (String _grade) {
     this._grade = _grade;
   }
@@ -73,6 +76,7 @@ public class TestProperties extends ITestRequirementsInput
     return _subject;
   }
 
+  @JsonProperty ("subject")
   public void setSubject (String _subject) {
     this._subject = _subject;
   }
@@ -82,6 +86,7 @@ public class TestProperties extends ITestRequirementsInput
     return _accFamily;
   }
 
+  @JsonProperty ("family")
   public void setAccFamily (String _accFamily) {
     this._accFamily = _accFamily;
   }
@@ -91,6 +96,7 @@ public class TestProperties extends ITestRequirementsInput
     return _displayName;
   }
 
+  @JsonProperty ("displayName")
   public void setDisplayName (String _displayName) {
     this._displayName = _displayName;
   }
@@ -100,6 +106,7 @@ public class TestProperties extends ITestRequirementsInput
     return _sortOrder;
   }
 
+  @JsonProperty ("SortOrder")
   public void setSortOrder (int _sortOrder) {
     this._sortOrder = _sortOrder;
   }
@@ -109,6 +116,7 @@ public class TestProperties extends ITestRequirementsInput
     return _isSelectable;
   }
 
+  @JsonProperty ("isSelectable")
   public void setIsSelectable (boolean _isSelectable) {
     this._isSelectable = _isSelectable;
   }
@@ -118,6 +126,7 @@ public class TestProperties extends ITestRequirementsInput
     return _scoreByTDS;
   }
 
+  @JsonProperty ("ScoreByTDS")
   public void setScoreByTDS (boolean _scoreByTDS) {
     this._scoreByTDS = _scoreByTDS;
   }
@@ -127,6 +136,7 @@ public class TestProperties extends ITestRequirementsInput
     return _validateCompleteness;
   }
 
+  @JsonProperty ("ValidateCompleteness")
   public void setValidateCompleteness (boolean _validateCompleteness) {
     this._validateCompleteness = _validateCompleteness;
   }
@@ -136,6 +146,7 @@ public class TestProperties extends ITestRequirementsInput
     return _maxOpportunities;
   }
 
+  @JsonProperty ("maxOpportunities")
   public void setMaxOpportunities (int _maxOpportunities) {
     this._maxOpportunities = _maxOpportunities;
   }
@@ -145,6 +156,7 @@ public class TestProperties extends ITestRequirementsInput
     return _minItems;
   }
 
+  @JsonProperty ("MinItems")
   public void setMinItems (int _minItems) {
     this._minItems = _minItems;
   }
@@ -154,6 +166,7 @@ public class TestProperties extends ITestRequirementsInput
     return _maxItems;
   }
 
+  @JsonProperty ("MaxItems")
   public void setMaxItems (int _maxItems) {
     this._maxItems = _maxItems;
   }
@@ -163,6 +176,7 @@ public class TestProperties extends ITestRequirementsInput
     return _prefetch;
   }
 
+  @JsonProperty ("Prefetch")
   public void setPrefetch (int _prefetch) {
     this._prefetch = _prefetch;
   }
@@ -172,6 +186,7 @@ public class TestProperties extends ITestRequirementsInput
     return _segments;
   }
 
+  @JsonProperty ("Segments")
   private void setSegments (List<TestSegment> segments) {
     this._segments = segments;
   }
@@ -181,6 +196,7 @@ public class TestProperties extends ITestRequirementsInput
     return _requirements;
   }
 
+  @JsonProperty ("requirements")
   public void setRequirements (TestRequirements _requirements) {
     this._requirements = _requirements;
   }

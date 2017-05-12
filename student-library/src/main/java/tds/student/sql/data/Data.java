@@ -45,6 +45,7 @@ public class Data
    * @param _segmentPosition
    *          the _segmentPosition to set
    */
+  @JsonProperty ("SegmentPosition")
   public void setSegmentPosition (int _segmentPosition) {
     this._segmentPosition = _segmentPosition;
   }
@@ -61,6 +62,7 @@ public class Data
    * @param _type
    *          the _type to set
    */
+  @JsonProperty ("Type")
   public void setType (String _type) {
     this._type = _type;
   }
@@ -77,6 +79,7 @@ public class Data
    * @param _code
    *          the _code to set
    */
+  @JsonProperty ("Code")
   public void setCode (String _code) {
     this._code = _code;
   }
@@ -93,6 +96,7 @@ public class Data
    * @param _value
    *          the _value to set
    */
+  @JsonProperty ("Value")
   public void setValue (String _value) {
     this._value = _value;
   }
@@ -109,6 +113,7 @@ public class Data
    * @param _isVisible
    *          the _isVisible to set
    */
+  @JsonProperty ("IsVisible")
   public void setIsVisible (boolean _isVisible) {
     this._isVisible = _isVisible;
   }
@@ -125,6 +130,7 @@ public class Data
    * @param _isSelectable
    *          the _isSelectable to set
    */
+  @JsonProperty ("IsSelectable")
   public void setIsSelectable (boolean _isSelectable) {
     this._isSelectable = _isSelectable;
   }
@@ -141,6 +147,7 @@ public class Data
    * @param _allowChange
    *          the _allowChange to set
    */
+  @JsonProperty ("AllowChange")
   public void setAllowChange (boolean _allowChange) {
     this._allowChange = _allowChange;
   }
@@ -157,6 +164,7 @@ public class Data
    * @param _studentControl
    *          the _studentControl to set
    */
+  @JsonProperty ("StudentControl")
   public void setStudentControl (boolean _studentControl) {
     this._studentControl = _studentControl;
   }
@@ -173,6 +181,7 @@ public class Data
    * @param _isDefault
    *          the _isDefault to set
    */
+  @JsonProperty ("IsDefault")
   public void setIsDefault (boolean _isDefault) {
     this._isDefault = _isDefault;
   }
@@ -189,6 +198,7 @@ public class Data
    * @param _allowCombine
    *          the _allowCombine to set
    */
+  @JsonProperty ("AllowCombine")
   public void setAllowCombine (boolean _allowCombine) {
     this._allowCombine = _allowCombine;
   }
@@ -205,6 +215,7 @@ public class Data
    * @param _isFunctional
    *          the _isFunctional to set
    */
+  @JsonProperty ("IsFunctional")
   public void setIsFunctional (boolean _isFunctional) {
     this._isFunctional = _isFunctional;
   }
@@ -221,6 +232,7 @@ public class Data
    * @param _dependsOnToolType
    *          the _dependsOnToolType to set
    */
+  @JsonProperty ("DependsOnToolType")
   public void setDependsOnToolType (String _dependsOnToolType) {
     this._dependsOnToolType = _dependsOnToolType;
   }
@@ -237,6 +249,7 @@ public class Data
    * @param _disableOnGuestSession
    *          the _disableOnGuestSession to set
    */
+  @JsonProperty ("DisableOnGuestSession")
   public void setDisableOnGuestSession (boolean _disableOnGuestSession) {
     this._disableOnGuestSession = _disableOnGuestSession;
   }
@@ -253,6 +266,7 @@ public class Data
    * @param _toolTypeSortOrder
    *          the _toolTypeSortOrder to set
    */
+  @JsonProperty ("ToolTypeSortOrder")
   public void setToolTypeSortOrder (int _toolTypeSortOrder) {
     this._toolTypeSortOrder = _toolTypeSortOrder;
   }
@@ -269,6 +283,7 @@ public class Data
    * @param _toolValueSortOrder
    *          the _toolValueSortOrder to set
    */
+  @JsonProperty ("ToolValueSortOrder")
   public void setToolValueSortOrder (int _toolValueSortOrder) {
     this._toolValueSortOrder = _toolValueSortOrder;
   }
