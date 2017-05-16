@@ -8,11 +8,10 @@
  ******************************************************************************/
 package tds.student.services.abstractions;
 
-import java.util.List;
-import java.util.UUID;
-
 import TDS.Shared.Browser.BrowserInfo;
 import TDS.Shared.Exceptions.ReturnStatusException;
+
+import java.util.List;
 
 import tds.student.services.data.ApprovalInfo;
 import tds.student.sql.data.OpportunityInfo;
