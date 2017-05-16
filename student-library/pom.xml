@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.opentestsystem.delivery</groupId>
         <artifactId>student-common-parent</artifactId>
-        <version>3.0.9-SNAPSHOT</version>
+        <version>3.0.9</version>
     </parent>
 
     <properties>
