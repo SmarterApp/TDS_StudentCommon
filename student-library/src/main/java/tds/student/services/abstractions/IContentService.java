@@ -52,5 +52,12 @@ public interface IContentService
 
   void loadPageGroupDocuments (PageGroup pageGroup, AccLookup accLookup) throws ReturnStatusException;
 
+  /**
+   * Fetches the {@link tds.itemrenderer.data.xml.wordlist.Itemrelease} word list item
+   *
+   * @param path The path to the item
+   * @return The {@link tds.itemrenderer.data.xml.wordlist.Itemrelease} item xml
+   * @throws ReturnStatusException
+   */
   Itemrelease getWordListItemRelease(String path) throws ReturnStatusException;
 }
