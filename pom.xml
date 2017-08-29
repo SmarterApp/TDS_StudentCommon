@@ -6,7 +6,7 @@
     <artifactId>student-common-parent</artifactId>
     <name>student-common-parent</name>
     <packaging>pom</packaging>
-    <version>4.0.0-SNAPSHOT</version>
+    <version>4.0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>org.opentestsystem.shared</groupId>
