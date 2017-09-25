@@ -11,6 +11,7 @@ package tds.student.services.abstractions;
 import tds.itemrenderer.data.AccLookup;
 import tds.itemrenderer.data.IITSDocument;
 import tds.itemrenderer.data.ITSMachineRubric;
+import tds.itemrenderer.data.xml.wordlist.Itemrelease;
 import tds.itemscoringengine.RubricContentSource;
 //import tds.itemscoringengine.Score.RubricContentSource;
 import tds.student.services.data.PageGroup;
@@ -50,4 +51,13 @@ public interface IContentService
   ITSMachineRubric parseMachineRubric (IITSDocument itsDocument, String language, RubricContentSource rubricContentSource) throws ReturnStatusException;
 
   void loadPageGroupDocuments (PageGroup pageGroup, AccLookup accLookup) throws ReturnStatusException;
+
+  /**
+   * Fetches the {@link tds.itemrenderer.data.xml.wordlist.Itemrelease} word list item
+   *
+   * @param path The path to the item
+   * @return The {@link tds.itemrenderer.data.xml.wordlist.Itemrelease} item xml
+   * @throws ReturnStatusException
+   */
+  Itemrelease getWordListItemRelease(String path) throws ReturnStatusException;
 }
