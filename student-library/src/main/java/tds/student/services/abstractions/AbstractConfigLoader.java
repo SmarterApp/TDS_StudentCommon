@@ -29,6 +29,7 @@ public abstract class AbstractConfigLoader extends AbstractDAO
   protected AppExterns                    _externs;
   protected PTSetup                       _ptSetup;
   protected List<TesteeAttributeMetadata> _testeeAttributeMetadata;
+  protected boolean                       _isSecureBrowserRequired;
   protected ForbiddenApps                 _forbiddenApps;
   protected List<TTSVoicePack>            _voicePacks;
   protected AccList                       _globalAccList;
@@ -50,6 +51,10 @@ public abstract class AbstractConfigLoader extends AbstractDAO
 
   public List<TesteeAttributeMetadata> getTesteeAttributeMetadata () {
     return _testeeAttributeMetadata;
+  }
+
+  public boolean isSecureBrowserRequired () {
+    return _isSecureBrowserRequired;
   }
 
   public ForbiddenApps getForbiddenApps () {

@@ -53,6 +53,8 @@ public interface IConfigRepository
 
   ForbiddenApps getForbiddenApps () throws ReturnStatusException;
 
+  boolean isSecureBrowserRequired() throws ReturnStatusException;
+
   Iterable<TTSVoicePack> getVoicePacks () throws ReturnStatusException;
 
   AccList getGlobalAccommodations () throws ReturnStatusException;
