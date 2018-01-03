@@ -8,20 +8,17 @@
  ******************************************************************************/
 package tds.student.services.data;
 
+import AIR.Common.collections.IGrouping;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections.Transformer;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.Transformer;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import AIR.Common.collections.IGrouping;
-
-//import tds.itemrenderer.data.IITSDocument;
 import tds.student.sql.data.OpportunityItem;
 
 /**
@@ -115,34 +112,34 @@ public class PageList extends ArrayList<PageGroup>
   }
 
   // / <summary>
+  // / Checks each group to determine if all responses have been answered.
+  // / </summary>
+  @JsonProperty("AllAnswered")
+  public boolean isAllAnswered() {
+    return this.all(/*responseGroup => responseGroup.IsAllAnswered*/ new Predicate() {
+      @Override
+      public boolean evaluate(Object object) {
+        PageGroup responseGroup = (PageGroup) object;
+        return responseGroup.getItemsLeftUnanswered() == 0;
+      }
+    });
+  }
+
+  // / <summary>
   // / Checks each group to determine if the number of responses required has
   // been met.
   // / </summary>
-  @JsonProperty ("AllCompleted")
-  public boolean isAllCompleted ()
-  {
-    // TODO
-     return this.all(/*responseGroup => responseGroup.IsCompleted*/ new Predicate()
-    {
-      
+  @JsonProperty("AllCompleted")
+  public boolean isAllCompleted() {
+    return this.all(/*responseGroup => responseGroup.IsCompleted*/ new Predicate() {
       @Override
-      public boolean evaluate (Object object) {
-        PageGroup responseGroup = (PageGroup)object;
-        return responseGroup.getIsCompleted ();
+      public boolean evaluate(Object object) {
+        PageGroup responseGroup = (PageGroup) object;
+        return responseGroup.getIsCompleted();
       }
     });
-     //TODO mpatel - Remove following code after code review
-  /*  List<PageGroup> listOfPageGroup = null;
-    listOfPageGroup = getListOfPageGroup ();
-    for (PageGroup pageGroup : listOfPageGroup) {
-      if (pageGroup.getIsCompleted ())
-        listOfPageGroup.add (pageGroup);
-    }
-    setListOfPageGroup (listOfPageGroup);
-    return true;*/
   }
 
-  // TODO
   public List<ItemResponse> getResponses ()
   {
     List<ItemResponse> itemResponseList = new ArrayList<ItemResponse> ();
